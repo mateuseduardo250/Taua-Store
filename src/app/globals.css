@@ -17,8 +17,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
@@ -26,19 +25,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  min-height: 100vh;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   font: inherit;
 }
 
@@ -65,8 +57,7 @@ main {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
 }
 
 .badge {
@@ -79,14 +70,12 @@ main {
   color: #6ee7b7;
   font-size: 13px;
   font-weight: 700;
-  border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 .title {
   margin: 0;
   font-size: clamp(28px, 5vw, 42px);
   line-height: 1.05;
-  color: #f8fafc;
 }
 
 .subtitle {
@@ -109,94 +98,13 @@ main {
   font-weight: 700;
 }
 
-.btn:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-}
-
 .btn-primary {
   background: linear-gradient(90deg, #10b981, #22c55e);
   color: white;
-  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.28);
-}
-
-.btn-primary:hover:not(:disabled) {
-  background: linear-gradient(90deg, #059669, #16a34a);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   color: var(--text);
   border: 1px solid var(--border);
-}
-
-.btn-secondary:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.14);
-}
-
-.field-group {
-  display: grid;
-  gap: 14px;
-}
-
-.field {
-  display: grid;
-  gap: 8px;
-}
-
-.field label {
-  font-size: 14px;
-  font-weight: 700;
-  color: #e2e8f0;
-}
-
-.field input,
-.field select,
-.field textarea {
-  border: 1px solid var(--border);
-  background: rgba(15, 23, 42, 0.85);
-  color: var(--text);
-  border-radius: 14px;
-  min-height: 48px;
-  padding: 12px 14px;
-  width: 100%;
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
-  color: #94a3b8;
-}
-
-.field textarea {
-  min-height: 110px;
-  resize: vertical;
-}
-
-.field small {
-  color: var(--muted);
-}
-
-.helper {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.error {
-  color: var(--danger);
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.success-box {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(22, 101, 52, 0.18);
-  border: 1px solid rgba(74, 222, 128, 0.3);
-  color: #bbf7d0;
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: min(100%, calc(100% - 20px));
-  }
 }
