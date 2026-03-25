@@ -8,6 +8,7 @@ import { getCart, saveCart } from '@/lib/storage';
 
 export function ProductList() {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const cart = getCart();
@@ -19,6 +20,17 @@ export function ProductList() {
   }, []);
 
   useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
+
+  useEffect(() => {
     const cartItems = Object.entries(quantities)
       .filter(([, quantity]) => quantity > 0)
       .map(([productId, quantity]) => ({ productId, quantity }));
@@ -27,24 +39,33 @@ export function ProductList() {
   }, [quantities]);
 
   const mapStock = useMemo(
-    () => products.reduce<Record<string, number>>((acc, product) => {
-      acc[product.id] = product.stock;
-      return acc;
-    }, {}),
+    () =>
+      products.reduce<Record<string, number>>((acc, product) => {
+        acc[product.id] = product.stock;
+        return acc;
+      }, {}),
     []
   );
 
   function updateQuantity(productId: string, amount: number) {
     setQuantities((current) => {
       const currentQty = current[productId] ?? 0;
-      const nextQty = Math.max(0, Math.min((mapStock[productId] ?? 0), currentQty + amount));
+      const nextQty = Math.max(0, Math.min(mapStock[productId] ?? 0, currentQty + amount));
       return { ...current, [productId]: nextQty };
     });
   }
 
   return (
     <section id="produtos" className="page-section">
-      <div className="container" style={{ display: 'grid', gap: 20, gridTemplateColumns: 'minmax(0, 1fr) 340px' }}>
+      <div
+        className="container"
+        style={{
+          display: 'grid',
+          gap: 20,
+          gridTemplateColumns: isMobile ? '1fr' : 'minmax(0, 1fr) 340px',
+          alignItems: 'start',
+        }}
+      >
         <div className="grid">
           {products.map((product) => (
             <ProductCard
@@ -56,7 +77,10 @@ export function ProductList() {
             />
           ))}
         </div>
-        <CartSummary products={products} quantities={quantities} />
+
+        <div style={{ marginTop: isMobile ? 8 : 0 }}>
+          <CartSummary products={products} quantities={quantities} />
+        </div>
       </div>
     </section>
   );
