@@ -55,6 +55,10 @@ export function ProductList() {
     });
   }
 
+  function removeItem(productId: string) {
+    setQuantities((current) => ({ ...current, [productId]: 0 }));
+  }
+
   return (
     <section id="produtos" className="page-section">
       <div
@@ -79,7 +83,13 @@ export function ProductList() {
         </div>
 
         <div style={{ marginTop: isMobile ? 8 : 0 }}>
-          <CartSummary products={products} quantities={quantities} />
+          <CartSummary
+            products={products}
+            quantities={quantities}
+            onIncrease={(productId) => updateQuantity(productId, 1)}
+            onDecrease={(productId) => updateQuantity(productId, -1)}
+            onRemove={removeItem}
+          />
         </div>
       </div>
     </section>
