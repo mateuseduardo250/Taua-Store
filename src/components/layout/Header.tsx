@@ -12,7 +12,7 @@ export function Header() {
 
           {/* IMAGEM TOPO */}
           <Image
-            src="/TSstore.png"
+            src="/tsstore.png"
             alt="Tauá Store"
             width={400}
             height={200}
