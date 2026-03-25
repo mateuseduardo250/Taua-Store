@@ -15,7 +15,17 @@ export function CartSummary({ products, quantities }: Props) {
   const total = selected.reduce((acc, product) => acc + product.price * quantities[product.id], 0);
 
   return (
-    <aside className="card" style={{ padding: 20, position: 'sticky', top: 20 }}>
+    <aside
+      className="card"
+      style={{
+        padding: 20,
+        position: 'static',
+        top: 'auto',
+        width: '100%',
+        maxWidth: '100%',
+        alignSelf: 'start',
+      }}
+    >
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
         <h3 style={{ margin: 0 }}>🛒 Carrinho</h3>
         <span className="badge">{itemsCount} item(ns)</span>
@@ -41,7 +51,11 @@ export function CartSummary({ products, quantities }: Props) {
           <span>Total</span>
           <span>{formatBRL(total)}</span>
         </div>
-        <Link href="/checkout" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginTop: 16 }}>
+        <Link
+          href="/checkout"
+          className="btn btn-primary"
+          style={{ display: 'block', textAlign: 'center', marginTop: 16 }}
+        >
           Finalizar compra
         </Link>
       </div>
