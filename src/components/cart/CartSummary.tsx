@@ -38,9 +38,17 @@ export function CartSummary({ products, quantities }: Props) {
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
               <div>
                 <strong style={{ color: '#ffffff', display: 'block' }}>{product.name}</strong>
-                <div style={{ marginTop: 6, color: '#e5e7eb', fontSize: 14 }}>
-                  {quantities[product.id]}x • {formatBRL(product.price * quantities[product.id])}
-                </div>
+                <div
+  style={{
+    marginTop: 6,
+    color: '#374151',
+    fontSize: 16,
+    fontWeight: 700,
+    opacity: 1,
+  }}
+>
+  {quantities[product.id]}x • {formatBRL(product.price * quantities[product.id])}
+</div>
               </div>
 
               <button
