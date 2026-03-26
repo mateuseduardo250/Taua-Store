@@ -275,3 +275,22 @@ aside span {
   content: '';
   display: none;
 }
+/* ===== FORÇAR TEXTO DAS CATEGORIAS (Lazer, Alimentos etc) ===== */
+
+.grid .card span {
+  color: #ffffff !important; /* branco forte */
+  font-weight: 700;
+}
+
+/* fundo dessas barrinhas */
+.grid .card span {
+  background: rgba(255, 255, 255, 0.18) !important;
+  padding: 4px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* deixar mais visível ainda */
+.grid .card span {
+  text-shadow: 0 0 6px rgba(0, 255, 200, 0.6);
+}
