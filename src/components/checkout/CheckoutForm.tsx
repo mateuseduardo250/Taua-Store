@@ -221,20 +221,27 @@ export function CheckoutForm() {
               <input value={form.homeDelivery.zipCode} onChange={(e) => updateField('homeDelivery.zipCode', e.target.value)} placeholder="00000-000" />
               {errors.homeZip && <span className="error">{errors.homeZip}</span>}
             </div>
-            <div className="field">
-              <label>Rua / Avenida</label>
-              <div style={{ display: 'grid', gridTemplateColumns: '120px 1fr', gap: 10 }}>
-                <select value={form.homeDelivery.streetType} onChange={(e) => updateField('homeDelivery.streetType', e.target.value)}>
-                  <option>Rua</option>
-                  <option>Avenida</option>
-                  <option>Alameda</option>
-                  <option>Travessa</option>
-                  <option>Outro</option>
-                </select>
-                <input value={form.homeDelivery.streetName} onChange={(e) => updateField('homeDelivery.streetName', e.target.value)} />
-              </div>
-              {errors.homeStreet && <span className="error">{errors.homeStreet}</span>}
-            </div>
+<div className="field">
+  <label>Rua / Avenida</label>
+
+  <div style={{ display: 'flex', gap: 12 }}>
+    
+    {/* SELECT pequeno */}
+    <select style={{ width: 120 }}>
+      <option>Rua</option>
+      <option>Avenida</option>
+      <option>Alameda</option>
+    </select>
+
+    {/* INPUT grande */}
+    <input
+      type="text"
+      placeholder="Digite o nome da rua"
+      style={{ flex: 1 }}
+    />
+
+  </div>
+</div>
             <div className="field" style={{ maxWidth: 120 }}>
   <label>Número da casa</label>
   <input type="text" placeholder="Nº" />
