@@ -9,7 +9,25 @@ import { getCart, saveCart } from '@/lib/storage';
 export function ProductList() {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [isMobile, setIsMobile] = useState(false);
+  
+useEffect(() => {
+  const handleDecrease = (event: Event) => {
+    const customEvent = event as CustomEvent<string>;
+    const productId = customEvent.detail;
 
+    setQuantities((current) => {
+      const currentQty = current[productId] ?? 0;
+      const nextQty = Math.max(0, currentQty - 1);
+      return { ...current, [productId]: nextQty };
+    });
+  };
+
+  window.addEventListener('cart:decrease', handleDecrease as EventListener);
+
+  return () => {
+    window.removeEventListener('cart:decrease', handleDecrease as EventListener);
+  };
+}, []);
   useEffect(() => {
     const cart = getCart();
     const nextState = cart.reduce<Record<string, number>>((acc, item) => {
