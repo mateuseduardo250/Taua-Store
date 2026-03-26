@@ -224,7 +224,7 @@ export function CheckoutForm() {
 <div className="field">
   <label>Rua / Avenida</label>
 
-  <div style={{ display: 'flex', gap: 12 }}>
+  <div style={{ display: 'grid', gap: 12 }}>
     
     {/* SELECT pequeno */}
     <select style={{ width: 120 }}>
