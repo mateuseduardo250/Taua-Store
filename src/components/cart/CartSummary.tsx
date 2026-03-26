@@ -51,24 +51,26 @@ export function CartSummary({ products, quantities }: Props) {
 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={() => window.dispatchEvent(new CustomEvent('cart:decrease', { detail: product.id }))}
-                style={{
-                  width: 34,
-                  height: 34,
-                  borderRadius: 10,
-                  border: '1px solid rgba(255,255,255,0.16)',
-                  background: 'rgba(255,255,255,0.10)',
-                  color: '#fff',
-                  cursor: 'pointer',
-                  fontSize: 20,
-                  lineHeight: '1',
-                }}
-                title="Reduzir item"
-              >
-                −
-              </button>
+             <button
+  type="button"
+  onClick={() => window.dispatchEvent(new CustomEvent('cart:decrease', { detail: product.id }))}
+  style={{
+    width: 34,
+    height: 34,
+    borderRadius: 10,
+    border: '1px solid #cbd5e1',
+    background: '#f8fafc',
+    color: '#111827',
+    cursor: 'pointer',
+    fontSize: 20,
+    fontWeight: 700,
+    lineHeight: '1',
+    opacity: 1,
+  }}
+  title="Reduzir item"
+>
+  −
+</button>
             </div>
           </div>
         ))}
