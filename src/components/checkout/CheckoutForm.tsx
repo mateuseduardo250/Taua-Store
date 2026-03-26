@@ -208,6 +208,10 @@ export function CheckoutForm() {
               {errors.receiverName && <span className="error">{errors.receiverName}</span>}
             </div>
             <div className="field">
+  <label>Endereço</label>
+  <input type="text" placeholder="Digite o endereço completo" />
+</div>
+            <div className="field">
               <label>Estado</label>
               <input value={form.homeDelivery.state} onChange={(e) => updateField('homeDelivery.state', e.target.value)} />
               {errors.homeState && <span className="error">{errors.homeState}</span>}
