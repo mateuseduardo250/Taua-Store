@@ -21,13 +21,6 @@ useEffect(() => {
       return { ...current, [productId]: nextQty };
     });
   };
-
-  window.addEventListener('cart:decrease', handleDecrease as EventListener);
-
-  return () => {
-    window.removeEventListener('cart:decrease', handleDecrease as EventListener);
-  };
-}, []);
   useEffect(() => {
     const cart = getCart();
     const nextState = cart.reduce<Record<string, number>>((acc, item) => {
