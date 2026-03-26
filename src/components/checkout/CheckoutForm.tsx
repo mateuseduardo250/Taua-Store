@@ -235,11 +235,10 @@ export function CheckoutForm() {
               </div>
               {errors.homeStreet && <span className="error">{errors.homeStreet}</span>}
             </div>
-            <div className="field">
-              <label>Número da casa</label>
-              <input value={form.homeDelivery.houseNumber} onChange={(e) => updateField('homeDelivery.houseNumber', e.target.value)} />
-              {errors.homeNumber && <span className="error">{errors.homeNumber}</span>}
-            </div>
+            <div className="field" style={{ maxWidth: 120 }}>
+  <label>Número da casa</label>
+  <input type="text" placeholder="Nº" />
+</div>
             <div className="field">
               <label>Referência</label>
               <input value={form.homeDelivery.reference} onChange={(e) => updateField('homeDelivery.reference', e.target.value)} />
