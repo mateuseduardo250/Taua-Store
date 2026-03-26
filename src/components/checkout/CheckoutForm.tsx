@@ -136,7 +136,7 @@ export function CheckoutForm() {
 
       <div className="card" style={{ padding: 20 }}>
         <h2 style={{ marginTop: 0 }}>2. Pagamento</h2>
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 18 }}>
+        <div style={{ display: 'grid', gap: 12, flexWrap: 'wrap', marginBottom: 18 }}>
           <button type="button" className={`btn ${form.paymentMethod === 'pix' ? 'btn-primary' : 'btn-secondary'}`} onClick={() => choosePayment('pix')}>
             PIX
           </button>
