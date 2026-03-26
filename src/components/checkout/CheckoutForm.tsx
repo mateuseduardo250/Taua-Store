@@ -148,9 +148,7 @@ export function CheckoutForm() {
           </button>
         </div>
 
-        {form.paymentMethod === 'pix' ? (
-        
-        ) : (
+        {form.paymentMethod === 'pix' ? null : (
           <div className="field-group" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
             <div className="field">
               <label>Nome no cartão</label>
