@@ -323,3 +323,21 @@ aside span {
   background: rgba(255,255,255,0.92);
   border: 1px solid rgba(255,255,255,0.3);
 }
+/* ===== DROPDOWN (SELECT) VISÍVEL ===== */
+
+.field select {
+  color: #0f172a !important;
+  background: #ffffff !important;
+}
+
+/* opções dentro do select */
+.field select option {
+  color: #0f172a !important;
+  background: #ffffff !important;
+}
+
+/* quando selecionado */
+.field select:focus {
+  color: #0f172a !important;
+  background: #ffffff !important;
+}
