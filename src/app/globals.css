@@ -203,3 +203,44 @@ main {
 .btn-secondary:hover {
   background: rgba(255,255,255,0.12);
 }
+
+/* ===== CONTRASTE DOS ITENS DO CARRINHO ===== */
+
+.card strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.card .helper {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* preço e quantidade (1x • R$) */
+.card div {
+  color: #e2e8f0;
+}
+
+/* deixa o preço mais forte */
+.card div span,
+.card div strong {
+  color: #ffffff;
+}
+
+/* ITEM DO CARRINHO (caixinha interna) */
+.card .card {
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* TEXTO DENTRO DO ITEM */
+.card .card * {
+  color: #ffffff !important;
+}
+
+/* BOTÃO DE DIMINUIR */
+.card button {
+  background: rgba(255,255,255,0.15) !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  color: #ffffff !important;
+}
