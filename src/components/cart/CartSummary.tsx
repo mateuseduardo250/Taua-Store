@@ -15,16 +15,7 @@ export function CartSummary({ products, quantities }: Props) {
   const total = selected.reduce((acc, product) => acc + product.price * quantities[product.id], 0);
 
   return (
-    <aside
-      className="card"
-      style={{
-        padding: 20,
-        position: 'static',
-        width: '100%',
-        maxWidth: '100%',
-        alignSelf: 'start',
-      }}
-    >
+    <aside className="card" style={{ padding: 20, position: 'static', top: 'auto', width: '100%', maxWidth: '100%', alignSelf: 'start' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
         <h3 style={{ margin: 0 }}>🛒 Carrinho</h3>
         <span className="badge">{itemsCount} item(ns)</span>
@@ -39,15 +30,15 @@ export function CartSummary({ products, quantities }: Props) {
             className="card"
             style={{
               padding: 14,
-              background: 'rgba(255,255,255,0.06)',
+              background: 'rgba(255,255,255,0.12)',
               boxShadow: 'none',
-              border: '1px solid rgba(255,255,255,0.08)',
+              border: '1px solid rgba(255,255,255,0.16)',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, alignItems: 'center' }}>
               <div>
-                <strong style={{ color: '#fff' }}>{product.name}</strong>
-                <div className="helper" style={{ marginTop: 6 }}>
+                <strong style={{ color: '#ffffff', display: 'block' }}>{product.name}</strong>
+                <div style={{ marginTop: 6, color: '#e5e7eb', fontSize: 14 }}>
                   {quantities[product.id]}x • {formatBRL(product.price * quantities[product.id])}
                 </div>
               </div>
@@ -59,8 +50,8 @@ export function CartSummary({ products, quantities }: Props) {
                   width: 34,
                   height: 34,
                   borderRadius: 10,
-                  border: '1px solid rgba(255,255,255,0.12)',
-                  background: 'rgba(255,255,255,0.08)',
+                  border: '1px solid rgba(255,255,255,0.16)',
+                  background: 'rgba(255,255,255,0.10)',
                   color: '#fff',
                   cursor: 'pointer',
                   fontSize: 20,
@@ -80,12 +71,7 @@ export function CartSummary({ products, quantities }: Props) {
           <span>Total</span>
           <span>{formatBRL(total)}</span>
         </div>
-
-        <Link
-          href="/checkout"
-          className="btn btn-primary"
-          style={{ display: 'block', textAlign: 'center', marginTop: 16 }}
-        >
+        <Link href="/checkout" className="btn btn-primary" style={{ display: 'block', textAlign: 'center', marginTop: 16 }}>
           Finalizar compra
         </Link>
       </div>
