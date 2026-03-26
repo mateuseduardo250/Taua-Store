@@ -149,9 +149,7 @@ export function CheckoutForm() {
         </div>
 
         {form.paymentMethod === 'pix' ? (
-          <div className="success-box">
-            {storeConfig.pixStatusMessage}
-          </div>
+        
         ) : (
           <div className="field-group" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
             <div className="field">
