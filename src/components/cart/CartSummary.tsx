@@ -61,9 +61,11 @@ export function CartSummary({ products, quantities }: Props) {
       borderRadius: 10,
       border: '1px solid rgba(255,255,255,0.2)',
       background: 'rgba(255,255,255,0.1)',
-      color: '#fff',
+      color: '#003b2f',
+      fontWeight: 'bold',
       cursor: 'pointer',
       fontSize: 18,
+      boxShadow: '0 0 10px rgba(0,255,200,0.4)',
     }}
     title="Reduzir item"
   >
