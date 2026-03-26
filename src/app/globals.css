@@ -294,3 +294,32 @@ aside span {
 .grid .card span {
   text-shadow: 0 0 6px rgba(0, 255, 200, 0.6);
 }
+/* ===== INPUTS VISÍVEIS (DIGITAÇÃO) ===== */
+
+.field input,
+.field textarea,
+.field select {
+  color: #0f172a !important; /* texto escuro forte */
+  font-weight: 600;
+}
+
+/* placeholder (texto apagado tipo 000.000) */
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1;
+}
+
+/* quando está digitando */
+.field input:focus,
+.field textarea:focus {
+  color: #0f172a !important;
+}
+
+/* fundo levemente mais bonito (opcional, mantém seu estilo) */
+.field input,
+.field textarea,
+.field select {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.3);
+}
