@@ -48,7 +48,23 @@ export function ProductList() {
       window.removeEventListener('cart:decrease', handleDecrease as EventListener);
     };
   }, []);
+useEffect(() => {
+  const handleIncrease = (event: Event) => {
+    const customEvent = event as CustomEvent<string>;
+    const productId = customEvent.detail;
 
+    setQuantities((current) => {
+      const currentQty = current[productId] ?? 0;
+      return { ...current, [productId]: currentQty + 1 };
+    });
+  };
+
+  window.addEventListener('cart:increase', handleIncrease);
+
+  return () => {
+    window.removeEventListener('cart:increase', handleIncrease);
+  };
+}, []);
   useEffect(() => {
     const cartItems = Object.entries(quantities)
       .filter(([, quantity]) => quantity > 0)
