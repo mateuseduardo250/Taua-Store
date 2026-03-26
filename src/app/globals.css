@@ -244,3 +244,34 @@ main {
   border: 1px solid rgba(255,255,255,0.25) !important;
   color: #ffffff !important;
 }
+/* ===== CORRIGIR TEXTOS APAGADOS (BADGES / TAGS / ITENS) ===== */
+
+/* aquelas barrinhas brancas (categorias, tags, etc) */
+.badge,
+span,
+small {
+  color: #0f172a !important; /* escuro forte */
+  font-weight: 600;
+}
+
+/* caso tenha fundo claro nessas tags */
+.badge {
+  background: rgba(255,255,255,0.85) !important;
+  color: #0f172a !important;
+}
+
+/* texto dentro dos produtos (categoria tipo "Lazer", "Alimentos") */
+.grid span {
+  color: #cbd5e1 !important;
+}
+
+/* ajuste específico do carrinho */
+aside span {
+  color: #ffffff !important;
+}
+
+/* se ainda tiver branco invisível, força isso */
+.card span:empty::after {
+  content: '';
+  display: none;
+}
